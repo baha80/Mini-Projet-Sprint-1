@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+        <h2>Modifier un developpeur :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Dev</label>
+            <input readonly type="text" [(ngModel)]="currentDeveloppeur.idDev" name="idDev" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Dev</label>
+            <input type="text" [(ngModel)]="currentDeveloppeur.nomDev" name="nomDev" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Sexe</label>
+            <input type="number" [(ngModel)]="currentDeveloppeur.salaire" name="salaire" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date </label>
+            <input type="date" [ngModel]="currentDeveloppeur.date | date: 'yyyy-MM-dd'"
+                (ngModelChange)=" currentDeveloppeur.date= $event" name="date" class="form-control">
+        </div>
+        <!-- <div class="col-sm-4 col-md-4 col-lg-4">
+            <select class="form-control form-control-lg" id="idCat" name="idCat"
+            [(ngModel)]="updatedPojtId">
+            <option *ngFor="let cat of categories" [value]="gn.idPoj" >
+            {{cat.nomCat}}
+            </option>
+            </select>
+            </div> -->
+
+       
+
+
+
+        <div class="mt-2">
+            <button type="submit" (click)="updateDeveloppeurs()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
